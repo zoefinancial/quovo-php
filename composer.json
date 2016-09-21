@@ -7,7 +7,7 @@
     {
         "type": "vcs",
         "url": "https://github.com/weladev/quovo-php/"
-    }
+    },
     "require": {
     "wela/quovo-php": "dev-master"
   },
