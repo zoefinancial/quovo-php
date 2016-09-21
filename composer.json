@@ -1,5 +1,5 @@
 {
-  "name": "zoefin/quovo-php",
+  "name": "zoefinancial/quovo-php",
   "description": "Quovo API Client built on top of Guzzle",
   "minimum-stability": "stable",
   "license": "MIT",
