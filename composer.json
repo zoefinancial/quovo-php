@@ -1,21 +1,15 @@
 {
-  "name": "wela/quovo-php",
+  "name": "zoefin/quovo-php",
   "description": "Quovo API Client built on top of Guzzle",
   "minimum-stability": "stable",
   "license": "MIT",
-  "authors": [
+  "repositories": [
     {
-      "name": "Wela Dev Team",
-      "homepage": "https://getwela.com/"
+        "type": "vcs",
+        "url": "https://github.com/weladev/quovo-php/"
     }
-  ],
-  "require": {
-    "gregwar/cache": "1.0.*",
-    "guzzlehttp/guzzle": "~6.0"
+    "require": {
+    "wela/quovo-php": "dev-master"
   },
-  "autoload": {
-    "psr-4": {
-      "Wela\\": "src/Wela/"
-    }
-  }
+  ]
 }
