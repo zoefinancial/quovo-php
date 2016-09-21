@@ -1,12 +1,12 @@
 {
-  "name": "zoefinancial/quovo-php",
+  "name": "wela/quovo-php",
   "description": "Quovo API Client built on top of Guzzle",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
-      "name": "Zoe Financial ",
-      "homepage": "https://www.zoefin.com/"
+      "name": "Wela Dev Team",
+      "homepage": "https://getwela.com/"
     }
   ],
   "require": {
