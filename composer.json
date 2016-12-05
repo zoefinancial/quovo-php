@@ -3,10 +3,4 @@
   "description": "Quovo API Client built on top of Guzzle",
   "minimum-stability": "stable",
   "license": "MIT",
-  "repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/weladev/quovo-php/"
-    }
-    ]
 }
