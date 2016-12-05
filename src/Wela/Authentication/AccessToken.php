@@ -26,7 +26,7 @@ class AccessToken
         {
             $client = new Client([
                 'base_uri' => static::BASE_AUTH_URL,
-                'timeout' => 5
+                'timeout' => 15
             ]);
 
             $response = $client->request('POST', 'v2/tokens', [
