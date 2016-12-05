@@ -10,6 +10,6 @@
     }
     ],
     "require": {
-      "wela/quovo-php": "dev-master"
+      "wela/quovo-php": "master"
     }
 }
