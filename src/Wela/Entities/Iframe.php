@@ -26,7 +26,7 @@ class Iframe extends QuovoAbstract
     /**
      * @const string The uri used for this entity.
      */
-    const PATH = 'iframe_token';
+    const PATH = 'iframe_token?beta=true';
 
     /**
      * Iframe constructor.
