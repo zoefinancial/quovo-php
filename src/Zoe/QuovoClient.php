@@ -1,6 +1,6 @@
 <?php
 
-namespace Wela;
+namespace Zoe;
 
 use GuzzleHttp\Client;
 

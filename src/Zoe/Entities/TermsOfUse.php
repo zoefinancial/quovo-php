@@ -1,17 +1,17 @@
 <?php
 
-namespace Wela\Entities;
+namespace Zoe\Entities;
 
-use Wela\QuovoAbstract;
-use Wela\QuovoApp;
-use Wela\QuovoClient;
+use Zoe\QuovoAbstract;
+use Zoe\QuovoApp;
+use Zoe\QuovoClient;
 
 /**
- * Class History
+ * Class TermsOfUse
  *
- * @package Wela\Entities
+ * @package Zoe\Entities
  */
-class History extends QuovoAbstract
+class TermsOfUse extends QuovoAbstract
 {
     /**
      * @var QuovoApp The Quovo app entity.
@@ -26,10 +26,10 @@ class History extends QuovoAbstract
     /**
      * @const string The uri used for this entity.
      */
-    const PATH = 'history';
+    const PATH = 'terms_of_use';
 
     /**
-     * History constructor.
+     * TermsOfUse constructor.
      *
      * @param QuovoApp $app
      * @param QuovoClient $client
@@ -41,18 +41,20 @@ class History extends QuovoAbstract
     }
 
     /**
-     * Get all transactions
+     * Check ToU Acceptance
      *
-     * Provides historical transactions across all of your users and their accounts.
+     * Check whether or not a User has accepted Quovo’s terms of use.
      *
-     * @param array $params The request params.
+     * @param int $userId
      *
      * @return mixed
      */
-    public function all(array $params = [])
+    public function checkAcceptance($userId)
     {
         $options = [
-            'query' => $params
+            'query' => [
+                'user' => $userId
+            ]
         ];
 
         return $this->get(
@@ -64,17 +66,15 @@ class History extends QuovoAbstract
     }
 
     /**
-     * Update a transaction
+     * Update ToU Acceptance
      *
-     * Update an existing historical transaction. Currently, only used to update a
-     * transaction’s expense_category.
+     * Update whether or not a User has accepted Quovo’s terms of use.
      *
-     * @param int   $transactionId
      * @param array $params
      *
      * @return mixed
      */
-    public function update($transactionId, array $params)
+    public function update(array $params)
     {
         $options = [
             'json' => $params
@@ -83,7 +83,7 @@ class History extends QuovoAbstract
         return $this->put(
             $this->app,
             $this->client,
-            self::PATH.'/'.$transactionId,
+            self::PATH,
             $options
         );
     }

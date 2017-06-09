@@ -1,17 +1,17 @@
 <?php
 
-namespace Wela\Entities;
+namespace Zoe\Entities;
 
-use Wela\QuovoAbstract;
-use Wela\QuovoApp;
-use Wela\QuovoClient;
+use Zoe\QuovoAbstract;
+use Zoe\QuovoApp;
+use Zoe\QuovoClient;
 
 /**
- * Class Sync
+ * Class History
  *
- * @package Wela\Entities
+ * @package Zoe\Entities
  */
-class Sync extends QuovoAbstract
+class History extends QuovoAbstract
 {
     /**
      * @var QuovoApp The Quovo app entity.
@@ -26,10 +26,10 @@ class Sync extends QuovoAbstract
     /**
      * @const string The uri used for this entity.
      */
-    const PATH = 'sync';
+    const PATH = 'history';
 
     /**
-     * Sync constructor.
+     * History constructor.
      *
      * @param QuovoApp $app
      * @param QuovoClient $client
@@ -41,20 +41,18 @@ class Sync extends QuovoAbstract
     }
 
     /**
-     * Get Sync progress
+     * Get all transactions
      *
-     * Check the ongoing sync progress of an Account.
+     * Provides historical transactions across all of your users and their accounts.
      *
-     * @param int $accountId
+     * @param array $params The request params.
      *
      * @return mixed
      */
-    public function getSyncStatus($accountId)
+    public function all(array $params = [])
     {
         $options = [
-            'query' => [
-                'account' => $accountId
-            ]
+            'query' => $params
         ];
 
         return $this->get(
@@ -66,26 +64,26 @@ class Sync extends QuovoAbstract
     }
 
     /**
-     * Create Sync
+     * Update a transaction
      *
-     * Creates and initiates a new account sync.
+     * Update an existing historical transaction. Currently, only used to update a
+     * transaction’s expense_category.
      *
-     * @param int $accountId
+     * @param int   $transactionId
+     * @param array $params
      *
      * @return mixed
      */
-    public function sync($accountId)
+    public function update($transactionId, array $params)
     {
         $options = [
-            'json' => [
-                'account' => $accountId
-            ]
+            'json' => $params
         ];
 
-        return $this->post(
+        return $this->put(
             $this->app,
             $this->client,
-            self::PATH,
+            self::PATH.'/'.$transactionId,
             $options
         );
     }

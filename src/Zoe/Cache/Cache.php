@@ -1,6 +1,6 @@
 <?php
 
-namespace Wela\Cache;
+namespace Zoe\Cache;
 
 use \Gregwar\Cache\Cache as GregwarCache;
 

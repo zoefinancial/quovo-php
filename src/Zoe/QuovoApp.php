@@ -1,8 +1,8 @@
 <?php
 
-namespace Wela;
+namespace Zoe;
 
-use Wela\Authentication\AccessToken;
+use Zoe\Authentication\AccessToken;
 
 class QuovoApp
 {

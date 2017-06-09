@@ -1,17 +1,17 @@
 <?php
 
-namespace Wela\Entities;
+namespace Zoe\Entities;
 
-use Wela\QuovoAbstract;
-use Wela\QuovoApp;
-use Wela\QuovoClient;
+use Zoe\QuovoAbstract;
+use Zoe\QuovoApp;
+use Zoe\QuovoClient;
 
 /**
- * Class Positions
+ * Class Request
  *
- * @package Wela\Entities
+ * @package Zoe\Entities
  */
-class Positions extends QuovoAbstract
+class Request extends QuovoAbstract
 {
     /**
      * @var QuovoApp The Quovo app entity.
@@ -26,10 +26,10 @@ class Positions extends QuovoAbstract
     /**
      * @const string The uri used for this entity.
      */
-    const PATH = 'positions';
+    const PATH = 'requests';
 
     /**
-     * Positions constructor.
+     * Request constructor.
      *
      * @param QuovoApp $app
      * @param QuovoClient $client
@@ -41,21 +41,21 @@ class Positions extends QuovoAbstract
     }
 
     /**
-     * Get all Positions
+     * Request a new Brokerage
      *
-     * Fetches on all Positions across all Portfolios and Accounts.
+     * Requests a new financial institution for Quovo to retrieve data from.
      *
      * @param array $params
      *
      * @return mixed
      */
-    public function all(array $params = [])
+    public function create(array $params)
     {
         $options = [
-            'query' => $params
+            'json' => $params
         ];
 
-        return $this->get(
+        return $this->post(
             $this->app,
             $this->client,
             self::PATH,

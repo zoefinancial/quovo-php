@@ -1,6 +1,6 @@
 <?php
 
-namespace Wela;
+namespace Zoe;
 
 abstract class QuovoAbstract
 {

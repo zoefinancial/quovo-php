@@ -1,17 +1,17 @@
 <?php
 
-namespace Wela\Entities;
+namespace Zoe\Entities;
 
-use Wela\QuovoAbstract;
-use Wela\QuovoApp;
-use Wela\QuovoClient;
+use Zoe\QuovoAbstract;
+use Zoe\QuovoApp;
+use Zoe\QuovoClient;
 
 /**
- * Class Webhook
+ * Class Token
  *
- * @package Wela\Entities
+ * @package Zoe\Entities
  */
-class Webhook extends QuovoAbstract
+class Token extends QuovoAbstract
 {
     /**
      * @var QuovoApp The Quovo app entity.
@@ -26,7 +26,7 @@ class Webhook extends QuovoAbstract
     /**
      * @const string The uri used for this entity.
      */
-    const PATH = 'webhooks';
+    const PATH = 'tokens';
 
     /**
      * Token constructor.
@@ -41,11 +41,9 @@ class Webhook extends QuovoAbstract
     }
 
     /**
-     * Get all Webhook​s
+     * Get all access tokens
      *
-     * Retrieve your registered webhooks. Note: secret is intentionally omitted
-     * from all GET requests. It is only returned after being updated or after
-     * a new webhook is created.
+     * Retrieves all of your access tokens.
      *
      * @return mixed
      */
@@ -59,15 +57,15 @@ class Webhook extends QuovoAbstract
     }
 
     /**
-     * Register a New Webhook​
+     * Create an access token
      *
-     * Used to register new webhooks.
+     * Creates and returns an access token.
      *
      * @param array $params
      *
      * @return mixed
      */
-    public function register(array $params)
+    public function create(array $params)
     {
         $options = [
             'json' => $params
@@ -82,40 +80,17 @@ class Webhook extends QuovoAbstract
     }
 
     /**
-     * Modify a Webhook
+     * Delete Token
      *
-     * Used to update an existing webhook.
+     * Deletes an Authentication Token
      *
-     * @param array $params
-     *
-     * @return mixed
+     * @param string $tokenName
      */
-    public function modify(array $params)
-    {
-        $options = [
-            'json' => $params
-        ];
-
-        return $this->put(
-            $this->app,
-            $this->client,
-            self::PATH,
-            $options
-        );
-    }
-
-    /**
-     * Delete a Webhook
-     *
-     * Deletes an existing webhook.
-     *
-     * @param $webhookName
-     */
-    public function deleteWebhook($webhookName)
+    public function deleteToken($tokenName)
     {
         $options = [
             'json' => [
-                'name' => $webhookName
+                'name' => $tokenName
             ]
         ];
 

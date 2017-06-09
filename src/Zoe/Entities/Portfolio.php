@@ -1,15 +1,15 @@
 <?php
 
-namespace Wela\Entities;
+namespace Zoe\Entities;
 
-use Wela\QuovoAbstract;
-use Wela\QuovoApp;
-use Wela\QuovoClient;
+use Zoe\QuovoAbstract;
+use Zoe\QuovoApp;
+use Zoe\QuovoClient;
 
 /**
  * Class Portfolio
  *
- * @package Wela\Entities
+ * @package Zoe\Entities
  */
 class Portfolio extends QuovoAbstract
 {

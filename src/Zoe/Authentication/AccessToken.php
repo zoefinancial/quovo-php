@@ -1,9 +1,9 @@
 <?php
 
-namespace Wela\Authentication;
+namespace Zoe\Authentication;
 
 use GuzzleHttp\Client;
-use Wela\Cache\Cache;
+use Zoe\Cache\Cache;
 
 class AccessToken
 {

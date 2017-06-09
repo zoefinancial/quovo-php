@@ -1,20 +1,20 @@
 <?php
 
-namespace Wela;
+namespace Zoe;
 
-use Wela\Entities\Account;
-use Wela\Entities\Brokerage;
-use Wela\Entities\Challenges;
-use Wela\Entities\History;
-use Wela\Entities\Iframe;
-use Wela\Entities\Portfolio;
-use Wela\Entities\Positions;
-use Wela\Entities\Request;
-use Wela\Entities\Sync;
-use Wela\Entities\TermsOfUse;
-use Wela\Entities\Token;
-use Wela\Entities\User;
-use Wela\Entities\Webhook;
+use Zoe\Entities\Account;
+use Zoe\Entities\Brokerage;
+use Zoe\Entities\Challenges;
+use Zoe\Entities\History;
+use Zoe\Entities\Iframe;
+use Zoe\Entities\Portfolio;
+use Zoe\Entities\Positions;
+use Zoe\Entities\Request;
+use Zoe\Entities\Sync;
+use Zoe\Entities\TermsOfUse;
+use Zoe\Entities\Token;
+use Zoe\Entities\User;
+use Zoe\Entities\Webhook;
 
 class Quovo
 {

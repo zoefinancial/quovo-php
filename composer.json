@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Wela\\": "src/Wela/"
+      "Zoe\\": "src/Zoe/"
     }
   }
 }
